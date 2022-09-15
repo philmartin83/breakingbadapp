@@ -8,7 +8,7 @@
 import Foundation
 
 struct Character: Codable {
-    let charId: Int
+    let charId: Int64
     let name: String
     let birthday: String
     let occupation: [String]
@@ -21,5 +21,15 @@ struct Character: Codable {
     enum CodingKeys: String, CodingKey {
         case charId = "char_id"
         case name, birthday, occupation, img, status, nickname, appearance, portrayed, category
+    }
+    
+    static let databaseHandler = DatabaseManager()
+    
+    func store() {
+        guard let user = Character.databaseHandler.add(DBCharacter.self) else {return}
+        user.name = name
+        user.charId = Int64(charId)
+        user.img = img
+        Character.databaseHandler.save()
     }
 }

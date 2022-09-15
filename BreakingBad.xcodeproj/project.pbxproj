@@ -26,6 +26,10 @@
 		4AB2AB5E2868E6E2004A95F8 /* CharacterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AB2AB5D2868E6E2004A95F8 /* CharacterTableViewCell.xib */; };
 		4AB2AB602868E833004A95F8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB2AB5F2868E833004A95F8 /* HomeViewModel.swift */; };
 		4AB2AB632868EC14004A95F8 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB2AB622868EC14004A95F8 /* CharacterDetailViewController.swift */; };
+		FF56592C28D3AEF6009800E8 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56592B28D3AEF6009800E8 /* DatabaseManager.swift */; };
+		FF56592F28D3B245009800E8 /* BreakingBad.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF56592D28D3B245009800E8 /* BreakingBad.xcdatamodeld */; };
+		FF56593228D3B389009800E8 /* DatabaseCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56593128D3B389009800E8 /* DatabaseCharacter.swift */; };
+		FF56593428D3C3E5009800E8 /* NSManagedObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56593328D3C3E5009800E8 /* NSManagedObject+Extension.swift */; };
 		FFA959A0286F0BB600BE315B /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA9599F286F0BB600BE315B /* UIImageView+Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +74,10 @@
 		4AB2AB5D2868E6E2004A95F8 /* CharacterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterTableViewCell.xib; sourceTree = "<group>"; };
 		4AB2AB5F2868E833004A95F8 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		4AB2AB622868EC14004A95F8 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
+		FF56592B28D3AEF6009800E8 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		FF56592E28D3B245009800E8 /* BreakingBad.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BreakingBad.xcdatamodel; sourceTree = "<group>"; };
+		FF56593128D3B389009800E8 /* DatabaseCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseCharacter.swift; sourceTree = "<group>"; };
+		FF56593328D3C3E5009800E8 /* NSManagedObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Extension.swift"; sourceTree = "<group>"; };
 		FFA9599F286F0BB600BE315B /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +129,7 @@
 		4AB2AB132868E024004A95F8 /* BreakingBad */ = {
 			isa = PBXGroup;
 			children = (
+				FF56592A28D3AED0009800E8 /* Database */,
 				4AB2AB612868EBFC004A95F8 /* Detail */,
 				4AB2AB4D2868E128004A95F8 /* Home */,
 				4AB2AB4C2868E114004A95F8 /* Core */,
@@ -248,10 +257,29 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
+		FF56592A28D3AED0009800E8 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				FF56593028D3B375009800E8 /* Models */,
+				FF56592B28D3AEF6009800E8 /* DatabaseManager.swift */,
+				FF56592D28D3B245009800E8 /* BreakingBad.xcdatamodeld */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		FF56593028D3B375009800E8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FF56593128D3B389009800E8 /* DatabaseCharacter.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		FFA9599E286F0BA500BE315B /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				FFA9599F286F0BB600BE315B /* UIImageView+Extension.swift */,
+				FF56593328D3C3E5009800E8 /* NSManagedObject+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -390,17 +418,21 @@
 			files = (
 				4AB2AB192868E024004A95F8 /* ViewController.swift in Sources */,
 				4AB2AB632868EC14004A95F8 /* CharacterDetailViewController.swift in Sources */,
+				FF56592F28D3B245009800E8 /* BreakingBad.xcdatamodeld in Sources */,
 				FFA959A0286F0BB600BE315B /* UIImageView+Extension.swift in Sources */,
 				4AB2AB602868E833004A95F8 /* HomeViewModel.swift in Sources */,
 				4AB2AB4A2868E10B004A95F8 /* RequestError.swift in Sources */,
 				4AB2AB5A2868E5C5004A95F8 /* CharacterTableViewCell.swift in Sources */,
+				FF56592C28D3AEF6009800E8 /* DatabaseManager.swift in Sources */,
 				4AB2AB552868E4EE004A95F8 /* CharacterEndpoint.swift in Sources */,
 				4AB2AB152868E024004A95F8 /* AppDelegate.swift in Sources */,
 				4AB2AB492868E10B004A95F8 /* HTTPClient.swift in Sources */,
 				4AB2AB4B2868E10B004A95F8 /* Endpoint.swift in Sources */,
 				4AB2AB5C2868E60E004A95F8 /* Character.swift in Sources */,
+				FF56593428D3C3E5009800E8 /* NSManagedObject+Extension.swift in Sources */,
 				4AB2AB172868E024004A95F8 /* SceneDelegate.swift in Sources */,
 				4AB2AB572868E56E004A95F8 /* HomeTableViewDataSource.swift in Sources */,
+				FF56593228D3B389009800E8 /* DatabaseCharacter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -742,6 +774,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FF56592D28D3B245009800E8 /* BreakingBad.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FF56592E28D3B245009800E8 /* BreakingBad.xcdatamodel */,
+			);
+			currentVersion = FF56592E28D3B245009800E8 /* BreakingBad.xcdatamodel */;
+			path = BreakingBad.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4AB2AB092868E024004A95F8 /* Project object */;
 }

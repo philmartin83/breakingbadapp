@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     private var dataSource = HomeTableViewDataSource()
     private var viewModel: HomeViewModel!
     private let segueIdentifier = "goToCharacterDetail"
+    private let databaseManager = DatabaseManager.shared
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -24,14 +25,29 @@ class ViewController: UIViewController {
     }
     
     private func setupMainView() {
-        viewModel = HomeViewModel()
-        viewModel.output = self
-        viewModel.fetchCharacters()
+        checkData()
         setupCells()
         tableView.dataSource = dataSource
         tableView.delegate = dataSource
         dataSource.tableViewUpdater = self
         navigationItem.title = "Breaking Bad"
+    }
+    
+    private func checkData() {
+        /*
+         Check to see if we have characters in our database
+         If we don't then use our viewModel to go fetch the data we will check again
+         based on the response
+         */
+        let fetch = databaseManager.fetch(DBCharacter.self)
+        if fetch.count == 0 {
+            viewModel = HomeViewModel()
+            viewModel.output = self
+            viewModel.fetchCharacters()
+        } else {
+            dataSource.setData(characters: fetch)
+            tableView.reloadData()
+        }
     }
 
     private func setupCells() {
@@ -41,7 +57,7 @@ class ViewController: UIViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let dest = segue.destination as? CharacterDetailViewController, let model = sender as? Character {
+        if let dest = segue.destination as? CharacterDetailViewController, let model = sender as? DBCharacter {
             dest.model = model
         }
     }
@@ -49,8 +65,9 @@ class ViewController: UIViewController {
 
 extension ViewController: HomeViewModelOutput {
     func contentRecieved(model: [Character]) {
-        dataSource.setData(characters: model)
-        tableView.reloadData()
+        // from the response we store the data
+        model.forEach({$0.store()})
+        checkData()
     }
     
     func requestFailed(error: String) {
@@ -62,7 +79,7 @@ extension ViewController: HomeViewModelOutput {
 }
 
 extension ViewController: HomeTableViewInteractionDelegate {
-    func pushViewController(character: Character?) {
+    func pushViewController(character: DBCharacter?) {
         self.performSegue(withIdentifier: segueIdentifier, sender: character)
     }
 }

@@ -9,17 +9,17 @@ import Foundation
 import UIKit
 
 protocol HomeTableViewInteractionDelegate: AnyObject {
-    func pushViewController(character: Character?)
+    func pushViewController(character: DBCharacter?)
 }
 
 class HomeTableViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - Properties
-    private var characters: [Character]?
+    private var characters: [DBCharacter]?
     weak var tableViewUpdater: HomeTableViewInteractionDelegate?
     
     // MARK: - Helpers
-    func setData(characters: [Character]) {
+    func setData(characters: [DBCharacter]) {
         self.characters = characters
     }
     

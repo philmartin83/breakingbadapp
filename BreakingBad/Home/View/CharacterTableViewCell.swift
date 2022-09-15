@@ -27,7 +27,7 @@ class CharacterTableViewCell: UITableViewCell {
         accessoryType = .disclosureIndicator
     }
     
-    func populate(charcter: Character?) {
+    func populate(charcter: DBCharacter?) {
         characterNameLabel.text = charcter?.name
         Task{
             await characterImageView?.loadImageUsingCache(withUrl:charcter?.img ?? "")

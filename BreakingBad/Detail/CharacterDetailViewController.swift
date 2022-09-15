@@ -9,7 +9,7 @@ import UIKit
 
 class CharacterDetailViewController: UIViewController {
 
-    var model: Character?
+    var model: DBCharacter?
     
     override func viewDidLoad() {
         super.viewDidLoad()
