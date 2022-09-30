@@ -30,6 +30,7 @@
 		FF56592F28D3B245009800E8 /* BreakingBad.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF56592D28D3B245009800E8 /* BreakingBad.xcdatamodeld */; };
 		FF56593228D3B389009800E8 /* DatabaseCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56593128D3B389009800E8 /* DatabaseCharacter.swift */; };
 		FF56593428D3C3E5009800E8 /* NSManagedObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56593328D3C3E5009800E8 /* NSManagedObject+Extension.swift */; };
+		FF56593628D3CC23009800E8 /* BreakingBadCoreDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56593528D3CC23009800E8 /* BreakingBadCoreDataTest.swift */; };
 		FFA959A0286F0BB600BE315B /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA9599F286F0BB600BE315B /* UIImageView+Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		FF56592E28D3B245009800E8 /* BreakingBad.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BreakingBad.xcdatamodel; sourceTree = "<group>"; };
 		FF56593128D3B389009800E8 /* DatabaseCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseCharacter.swift; sourceTree = "<group>"; };
 		FF56593328D3C3E5009800E8 /* NSManagedObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Extension.swift"; sourceTree = "<group>"; };
+		FF56593528D3CC23009800E8 /* BreakingBadCoreDataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingBadCoreDataTest.swift; sourceTree = "<group>"; };
 		FFA9599F286F0BB600BE315B /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				4AB2AB2B2868E02B004A95F8 /* BreakingBadTests.swift */,
+				FF56593528D3CC23009800E8 /* BreakingBadCoreDataTest.swift */,
 			);
 			path = BreakingBadTests;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AB2AB2C2868E02B004A95F8 /* BreakingBadTests.swift in Sources */,
+				FF56593628D3CC23009800E8 /* BreakingBadCoreDataTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
