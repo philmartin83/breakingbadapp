@@ -18,7 +18,7 @@ protocol HomeViewModelServiceable {
 
 class HomeViewModel: HTTPClient, HomeViewModelServiceable {
     
-    var output: HomeViewModelOutput?
+    weak var output: HomeViewModelOutput?
     
     @MainActor func fetchCharacters() {
         Task {
